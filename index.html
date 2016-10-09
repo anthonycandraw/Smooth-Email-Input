@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" type="text/css" href="input-style.css" />
+</head>
+<body>
+  <form name="form">
+    <input class="email-input" id="email-input" name="email-input" type="text" placeholder="wassup@yourawesomesite.com" />
+    <label class="input-label" id="input-label" for="email-input">Email Address</label>
+  </form>
+</body>
+
+<script>
+
+  var emailInput = document.getElementById('email-input');
+  var inputLabel = document.getElementById('input-label');
+
+  emailInput.addEventListener("input", function() {
+    var emailInputValue = document.forms["form"]["email-input"].value;
+
+    if (emailInputValue == null || emailInputValue == "") {
+      emailInput.classList.remove('email-input--open');
+      emailInput.classList.remove('email-input--error');
+      console.log("empty");
+    } else {
+      emailInput.classList.add('email-input--open');
+      emailInput.classList.remove('email-input-error');
+      console.log("input detected");
+    }
+
+  }, false);
+
+  emailInput.addEventListener("blur", function() {
+    var emailInputValue = document.forms["form"]["email-input"].value;
+    var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+
+    if (!re.test(emailInputValue) && emailInputValue.length > 0) {
+      emailInput.classList.add('email-input--error');
+      console.log('error');
+    } else if (emailInputValue == null || emailInputValue == "") {
+      emailInput.classList.remove('email-input--error');
+    } else {
+      emailInput.classList.remove('email-input--error');
+    }
+  }, false);
+
+</script>
+</html>
