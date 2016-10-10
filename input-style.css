@@ -8,6 +8,10 @@ body {
   padding: 0;
 }
 
+.email {
+  position: relative;
+}
+
 .email-input {
   background-color: transparent;
   border: 0;
@@ -44,6 +48,55 @@ body {
 .email-input--open + .input-label,
 .email-input--error + .input-label {
   padding: 8px 16px;
+}
+
+.email-input__sign {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 22px;
+  color: red;
+  -webkit-display: flex;
+          display: flex;
+  font: bold 20px/1 Arial, sans-serif;
+  height: 36px;
+  justify-content: center;
+  margin: auto;
+  overflow: hidden;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  transition: width .3s;
+  width: 0;
+}
+
+.email-input__sign--on {
+  width: 36px;
+}
+
+.email__send {
+  background-color: #00F0B5;
+  /*background: #FFE13A;*/
+  border: 0;
+  color: #000;
+  font: bold 12px/1 Arial, sans-serif;
+  overflow: hidden;
+  outline: none;
+  padding: 16px 0;
+  position: absolute;
+  right: 4px;
+  text-transform: uppercase;
+  top: 4px;
+  transition: background-color .3s, padding .5s, width .5s;
+  width: 0;
+}
+
+.email__send--on {
+  padding: 16px 32px;
+  width: auto;
+}
+
+.email__send--on:hover {
+  background-color: #AAFCB8;
 }
 
 .input-label {

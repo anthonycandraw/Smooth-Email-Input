@@ -9,9 +9,11 @@
   <link rel="stylesheet" type="text/css" href="input-style.css" />
 </head>
 <body>
-  <form name="form">
-    <input class="email-input" id="email-input" name="email-input" type="text" placeholder="wassup@yourawesomesite.com" />
+  <form class="email" name="form">
+    <input class="email-input" id="email-input" name="email-input" type="text" placeholder="wassup@yourawesomesite.com" >
     <label class="input-label" id="input-label" for="email-input">Email Address</label>
+    <i class="email-input__sign">!</i>
+    <button class="email__send">Send</button>
   </form>
 </body>
 
@@ -37,15 +39,23 @@
 
   emailInput.addEventListener("blur", function() {
     var emailInputValue = document.forms["form"]["email-input"].value;
+    var emailSign = document.querySelector('.email-input__sign');
+    var emailSend = document.querySelector('.email__send');
     var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
 
     if (!re.test(emailInputValue) && emailInputValue.length > 0) {
       emailInput.classList.add('email-input--error');
+      emailSign.classList.add('email-input__sign--on');
+      emailSend.classList.remove('email__send--on');
       console.log('error');
     } else if (emailInputValue == null || emailInputValue == "") {
       emailInput.classList.remove('email-input--error');
+      emailSign.classList.remove('email-input__sign--on');
+      emailSend.classList.remove('email__send--on');
     } else {
       emailInput.classList.remove('email-input--error');
+      emailSign.classList.remove('email-input__sign--on');
+      emailSend.classList.add('email__send--on');
     }
   }, false);
 
