@@ -1,3 +1,7 @@
+* {
+  font-family: 'Montserrat', -apple-system, Helvetica, Arial, sans-serif;
+}
+
 body {
   align-items: center;
   -webkit-display: flex;
@@ -17,7 +21,7 @@ body {
   border: 0;
   box-shadow: inset 0 -2px 0 0 #000;
   box-sizing: border-box;
-  color: #fff;
+  color: #eee;
   font-size: 17px;
   outline: none;
   padding: 16px 0;
@@ -27,7 +31,7 @@ body {
 }
 
 .email-input:-webkit-autofill {
-  -webkit-text-fill-color: #fff;
+  -webkit-text-fill-color: #eee;
 }
 
 .email-input:focus {
@@ -42,6 +46,7 @@ body {
 
 .email-input--error {
   box-shadow: inset 0 -100px 0 0 red;
+  color: #fff;
   padding: 16px;
 }
 
@@ -57,9 +62,11 @@ body {
   color: #fff;
   -webkit-display: flex;
           display: flex;
-  font: bold 16px/1 Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
   height: 28px;
   justify-content: center;
+  line-height: 1;
   margin: auto;
   overflow: hidden;
   position: absolute;
@@ -79,10 +86,10 @@ body {
   border: 0;
   color: #00F0B5;
   cursor: pointer;
-  font: bold 12px/1 Arial, sans-serif;
+  font: bold 12px/1;
   overflow: hidden;
   outline: none;
-  padding: 16px 0;
+  padding: 15px 0;
   position: absolute;
   right: 4px;
   text-transform: uppercase;
@@ -92,7 +99,7 @@ body {
 }
 
 .email__send--on {
-  padding: 16px 24px;
+  padding: 15px 24px;
   width: auto;
 }
 
@@ -102,8 +109,7 @@ body {
 
 .input-label {
   color: #000;
-  display: block;
-  font-family: Arial, sans-serif;
+  display: block;;
   font-size: 12px;
   font-weight: bold;
   letter-spacing: .03em;
