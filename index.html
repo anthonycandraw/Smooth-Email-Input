@@ -9,21 +9,48 @@
   <link rel="stylesheet" type="text/css" href="input-style.css" />
 </head>
 <body>
-  <form class="email" name="form">
+  <!-- <form class="email" name="form">
     <input class="email-input" id="email-input" name="email-input" type="text" placeholder="wassup@yourawesomesite.com" >
     <label class="input-label" id="input-label" for="email-input">Email Address</label>
     <i class="email-input__sign">!</i>
     <button class="email__send">Send</button>
-  </form>
+  </form> -->
+
+
+  <!-- Begin MailChimp Signup Form -->
+
+  <div id="mc_embed_signup">
+    <form action="//anthonycandraw.us12.list-manage.com/subscribe/post?u=0daffd69e2485edd80775846e&amp;id=8e6f2417e5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate email" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+
+      <div class="mc-field-group">
+      	<input type="email" placeholder="wassup@yourawesomesite.com" value="" name="EMAIL" class="required email email-input" id="mce-EMAIL">
+        <label class="input-label" id="input-email" for="mce-EMAIL">Email Address</label>
+        <i class="email-input__sign">!</i>
+      </div>
+
+    	<div id="mce-responses" class="clear">
+    		<div class="response" id="mce-error-response" style="display:none"></div>
+    		<div class="response" id="mce-success-response" style="display:none"></div>
+    	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+
+      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0daffd69e2485edd80775846e_8e6f2417e5" tabindex="-1" value=""></div>
+      <div class="clear"><input type="submit" value="Send" name="subscribe" id="mc-embedded-subscribe" class="button email__send"></div>
+
+      </div>
+    </form>
+  </div>
+<!--End mc_embed_signup-->
+
 </body>
 
 <script>
 
-  var emailInput = document.getElementById('email-input');
+  var emailInput = document.getElementById('mce-EMAIL');
   var inputLabel = document.getElementById('input-label');
 
   emailInput.addEventListener("keyup", function() {
-    var emailInputValue = document.forms["form"]["email-input"].value;
+    var emailInputValue = document.forms["mc-embedded-subscribe-form"]["EMAIL"].value;
     var emailSend = document.querySelector('.email__send');
     var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
 
@@ -43,7 +70,7 @@
   }, false);
 
   emailInput.addEventListener("blur", function() {
-    var emailInputValue = document.forms["form"]["email-input"].value;
+    var emailInputValue = document.forms["mc-embedded-subscribe-form"]["EMAIL"].value;
     var emailSign = document.querySelector('.email-input__sign');
     var emailSend = document.querySelector('.email__send');
     var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
