@@ -16,12 +16,13 @@ $sp5: 64px;
 
 body {
   align-items: center;
+  box-sizing: border-box;
   -webkit-display: flex;
           display: flex;
   height: 100vh;
   justify-content: center;
   margin: 0;
-  padding: 0;
+  padding: 20px;
 }
 
 #mc_embed_signup,
