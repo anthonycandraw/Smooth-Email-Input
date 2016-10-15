@@ -10,24 +10,15 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 </head>
 <body>
-  <!-- <form class="email" name="form">
-    <input class="email-input" id="email-input" name="email-input" type="text" placeholder="wassup@yourawesomesite.com" >
-    <label class="input-label" id="input-label" for="email-input">Email Address</label>
-    <i class="email-input__sign">!</i>
-    <button class="email__send">Send</button>
-  </form> -->
-
-
-  <!-- Begin MailChimp Signup Form -->
 
   <div id="mc_embed_signup">
     <form action="//anthonycandraw.us12.list-manage.com/subscribe/post?u=0daffd69e2485edd80775846e&amp;id=8e6f2417e5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate email" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
 
-      <div class="mc-field-group">
-      	<input type="email" placeholder="wassup@yourawesomesite.com" value="" name="EMAIL" class="required email email-input" id="mce-EMAIL">
-        <label class="input-label" id="input-email" for="mce-EMAIL">Email Address</label>
-        <i class="email-input__sign">!</i>
+      <div class="mc-field-group email__container">
+      	<input type="email" placeholder="wassup@yourawesomesite.com" value="" name="EMAIL" class="required email email__input" id="mce-EMAIL">
+        <label class="email__label" id="email__label" for="mce-EMAIL">Email Address</label>
+        <i class="email__input__warning">!</i>
       </div>
 
     	<div id="mce-responses" class="clear">
@@ -41,11 +32,34 @@
       </div>
     </form>
   </div>
-<!--End mc_embed_signup-->
 
 </body>
 
 <script>
+
+// var emailInput = document.getElementById('mce-EMAIL');
+// var inputLabel = document.getElementById('input-label');
+// var emailInputValue = document.forms["mc-embedded-subscribe-form"]["EMAIL"].value;
+// var emailSend = document.querySelector('.email__send');
+// var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
+//
+// var emailInputListener = function(emailInputValue,emailSend,re) {
+//   if (emailInputValue == null || emailInputValue == "") {
+//     emailInput.classList.remove('email-input--open');
+//     emailInput.classList.remove('email-input--error');
+//     emailSend.classList.remove('email__send--on');
+//   } else if (re.test(emailInputValue) && emailInputValue.length > 0) {
+//     emailInput.classList.add('email-input--open');
+//     emailInput.classList.remove('email-input-error');
+//     emailSend.classList.add('email__send--on');
+//   } else {
+//     emailInput.classList.add('email-input--open');
+//     emailSend.classList.remove('email__send--on');
+//     emailInput.classList.remove('email-input-error');
+//   }
+// };
+//
+// emailInput.addEventListener("keyup", emailInputListener(emailInputValue,emailSend,re), false);
 
   var emailInput = document.getElementById('mce-EMAIL');
   var inputLabel = document.getElementById('input-label');
@@ -56,40 +70,40 @@
     var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
 
     if (emailInputValue == null || emailInputValue == "") {
-      emailInput.classList.remove('email-input--open');
-      emailInput.classList.remove('email-input--error');
+      emailInput.classList.remove('email__input--open');
+      emailInput.classList.remove('email__input--error');
       emailSend.classList.remove('email__send--on');
     } else if (re.test(emailInputValue) && emailInputValue.length > 0) {
-      emailInput.classList.add('email-input--open');
-      emailInput.classList.remove('email-input-error');
+      emailInput.classList.add('email__input--open');
+      emailInput.classList.remove('email__input-error');
       emailSend.classList.add('email__send--on');
     } else {
-      emailInput.classList.add('email-input--open');
+      emailInput.classList.add('email__input--open');
       emailSend.classList.remove('email__send--on');
-      emailInput.classList.remove('email-input-error');
+      emailInput.classList.remove('email__input-error');
     }
-  }, false);
+  });
 
   emailInput.addEventListener("blur", function() {
     var emailInputValue = document.forms["mc-embedded-subscribe-form"]["EMAIL"].value;
-    var emailSign = document.querySelector('.email-input__sign');
+    var emailSign = document.querySelector('.email__input__warning');
     var emailSend = document.querySelector('.email__send');
     var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
 
     if (!re.test(emailInputValue) && emailInputValue.length > 0) {
-      emailInput.classList.add('email-input--error');
-      emailSign.classList.add('email-input__sign--on');
+      emailInput.classList.add('email__input--error');
+      emailSign.classList.add('email__input__warning--on');
       emailSend.classList.remove('email__send--on');
     } else if (emailInputValue == null || emailInputValue == "") {
-      emailInput.classList.remove('email-input--error');
-      emailSign.classList.remove('email-input__sign--on');
+      emailInput.classList.remove('email__input--error');
+      emailSign.classList.remove('email__input__warning--on');
       emailSend.classList.remove('email__send--on');
     } else {
-      emailInput.classList.remove('email-input--error');
-      emailSign.classList.remove('email-input__sign--on');
+      emailInput.classList.remove('email__input--error');
+      emailSign.classList.remove('email__input__warning--on');
       emailSend.classList.add('email__send--on');
     }
-  }, false);
+  });
 
 </script>
 </html>
